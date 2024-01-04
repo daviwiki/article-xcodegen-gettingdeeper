@@ -1,4 +1,4 @@
-b
+
 //// Common Configuration
 #include "App/Configs/xcconfig/Common.xcconfig"
 
