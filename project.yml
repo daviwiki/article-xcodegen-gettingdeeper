@@ -20,18 +20,13 @@ name: MyApplication
 options:
   minimumXcodeGenVersion: 2.10
   generateEmptyDirectories: true
-  deploymentTarget:
-      iOS: "14.0"
-      # watchOS: "6.0"
-      # tvOS: "14.0"
-      # macOS: "11.0"
 
 
 #############
 ## Settings
 
 settings:
-    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    IPHONEOS_DEPLOYMENT_TARGET: 15.0
 
 
 ############
