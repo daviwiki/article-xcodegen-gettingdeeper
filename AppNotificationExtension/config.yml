@@ -1,0 +1,45 @@
+
+############
+# Targets
+############
+
+targets:
+
+  NotificationExtension:
+    platform: iOS
+    type: app-extension
+
+    configFiles:
+      Staging Debug: ../App/Configs/xcconfig/Staging-Debug.xcconfig
+      Staging Release: ../App/Configs/xcconfig/Staging-Release.xcconfig
+      Production Debug: ../App/Configs/xcconfig/Production-Debug.xcconfig
+      Production Release: ../App/Configs/xcconfig/Production-Release.xcconfig
+
+    settings:
+      base:
+        INFOPLIST_FILE: AppNotificationExtension/Configs/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: $(MYAPP_NOTIFICATION_BUNDLE_SERVICE_ID)
+        MARKETING_VERSION: $(MYAPP_APP_VERSION)
+        CURRENT_PROJECT_VERSION: $(MYAPP_BUILD_VERSION)
+        CODE_SIGN_STYLE: $(MYAPP_CODE_SIGN_STYLE)
+        DEVELOPMENT_TEAM: $(MYAPP_TEAM_ID)
+        CODE_SIGN_ENTITLEMENTS: $(MYAPP_NOTIFICATION_ENTITLEMENT)
+        CODE_SIGN_IDENTITY: $(MYAPP_CODE_SIGN_IDENTITY)
+        PROVISIONING_PROFILE_SPECIFIER: $(MYAPP_NOTIFICATION_PROVISIONING_PROFILE_SPECIFIER)
+
+    sources:
+      - path: Sources
+        group: NotificationExtension
+      - path: Configs/Info.plist
+        group: NotificationExtension/configs
+      - path: Configs/entitlements
+        group: NotificationExtension/entitlements
+        
+    dependencies:
+      - package: OneSignal
+        product: OneSignalExtension
+
+    scheme:
+      configVariants:
+        - Staging
+        - Production

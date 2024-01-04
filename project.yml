@@ -1,0 +1,45 @@
+# 
+# Main file specification. 
+# 
+# In this file we will include:
+# - Base min XcodeGen version configuration
+# - Base iOS deploymentTarget
+# - Name of our base Project
+# - All the yaml files that we want to import when Xcodegen start parsing. 
+#   The final yaml will include all the yml references from here.
+# - ... other base options that could be useful
+
+
+############
+## Project 
+name: MyApplication
+
+
+############
+## Options
+options:
+  minimumXcodeGenVersion: 2.10
+  generateEmptyDirectories: true
+  deploymentTarget:
+      iOS: "14.0"
+      # watchOS: "6.0"
+      # tvOS: "14.0"
+      # macOS: "11.0"
+
+
+#############
+## Settings
+
+settings:
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+
+
+############
+## Imports
+
+include:
+  - packages.yml
+  - UICore/config.yml
+  - CommunicationsCore/config.yml
+  - App/config.yml
+  - AppNotificationExtension/config.yml

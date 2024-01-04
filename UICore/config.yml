@@ -1,0 +1,30 @@
+
+targets:
+
+  ############
+  # Framework
+  ############
+  
+  UICore:
+    name: UICore
+    type: framework
+    platform: iOS
+
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.atenea.uicore"
+      INFOPLIST_FILE: UICore/Configs/Info.plist
+
+    dependencies:
+      - package: Kingfisher
+    
+    sources:
+      - path: Sources
+        group: Modules/UICore
+      - path: Resources
+        group: Modules/UICore
+      - path: Configs/Info.plist
+        group: Modules/UICore
+
+  ############
+  # Tests
+  ############

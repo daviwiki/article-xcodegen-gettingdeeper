@@ -1,0 +1,22 @@
+
+# In this file we include all the package that we will use in our project.
+# Remember that it doesn't matter if this file will be local (if you want to use Carthage)
+# our using SwiftPackageManager
+
+packages:
+
+  Alamofire:
+    url: https://github.com/Alamofire/Alamofire.git
+    minorVersion: 5.8.1
+
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    minorVersion: 10.18.0
+
+  Kingfisher:
+    url: https://github.com/onevcat/Kingfisher.git
+    minorVersion: 5.15.8
+
+  OneSignal:
+    url: https://github.com/OneSignal/OneSignal-XCFramework.git
+    minorVersion: 5.0.5
